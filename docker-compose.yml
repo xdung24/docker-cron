@@ -1,0 +1,5 @@
+services:
+  background-worker:
+    build:
+      context: ./cron
+      dockerfile: Dockerfile
