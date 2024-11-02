@@ -68,6 +68,7 @@ COPY --chown=nonroot:adm entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # Create the log file to be able to run tail
+# We need to create it with nonroot user so both root and nonroot can write to it
 RUN touch cron.log
 
 USER nonroot
