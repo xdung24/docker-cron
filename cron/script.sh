@@ -1,3 +1,5 @@
 #!/bin/sh
 me=$(basename "$0")
-echo "Hello world from ${me} with user $(whoami) at $(date)" >> /home/nonroot/cron.log
+message="Hello world from ${me} with user $(whoami) at $(date)"
+echo $message # log to stdout
+echo $message >> /home/nonroot/cron.log # log to file
