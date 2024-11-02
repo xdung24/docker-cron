@@ -1,2 +1,3 @@
 #!/bin/sh
-echo "Hello world from script with user" $(whoami) " at " $(date) >> cron.log
+me=$(basename "$0")
+echo "Hello world from ${me} with user $(whoami) at $(date)" >> cron.log

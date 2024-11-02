@@ -32,7 +32,7 @@ RUN usermod -aG sudo nonroot
 RUN chown -R nonroot:adm /home/nonroot/
 
 # Add crontab for nonroot user
-COPY crontab-user /var/spool/cron/crontabs/nonroot
+COPY crontab-nonroot /var/spool/cron/crontabs/nonroot
 RUN chmod 0777 /var/spool/cron/crontabs/nonroot
 RUN chattr -i /var/spool/cron/crontabs/nonroot
 RUN chown nonroot:crontab /var/spool/cron/crontabs/nonroot
@@ -74,10 +74,10 @@ RUN touch cron.log
 USER nonroot
 
 # Copy the script file to the nonroot user's home directory
-COPY --chown=nonroot:adm script.sh script.sh
+COPY --chown=nonroot:adm script.sh /script.sh
 
 # Give execution rights on the script
-RUN chmod +x script.sh
+RUN chmod +x /script.sh
 
 # Run the entrypoint script on container startup
 ENTRYPOINT ["/bin/bash"]
