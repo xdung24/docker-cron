@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Hello world:" $(date) >> /home/nonroot/cron.log
+echo "Hello world from script with user" $(whoami) " at " $(date) >> cron.log

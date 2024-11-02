@@ -1,2 +1,2 @@
-* * * * * echo "Hello world non root"$(date) >> /home/nonroot/cron.log 2>&1
+* * * * * /home/nonroot/script.sh
 # Don't remove the empty line at the end of this file. It is required to run the cron job
