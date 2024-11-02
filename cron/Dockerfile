@@ -47,8 +47,8 @@ RUN echo "nonroot" >> /etc/at.allow
 RUN chgrp adm /var/run
 RUN chmod 777 /var/run
 
-# Create cron service and start it
-RUN service cron start
+# Change the permissions of the cron binary to allow execution by the 'adm' group
+RUN chmod gu+rw /var/run && chmod gu+s /usr/sbin/cron
 
 USER nonroot
 

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-tail -f /home/nonroot/cron.log
+cron && tail -f /home/nonroot/cron.log
